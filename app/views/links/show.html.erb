@@ -4,4 +4,8 @@
 
 <div class="btn-group">
 	<%= link_to 'Visit URL', @link.url, class: "btn btn-primary" %>
+  <% if @link.user == current_user %>
+    <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-primary" %>
+    <%= link_to 'Destroy', @Link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+  <% end %>
 </div>
